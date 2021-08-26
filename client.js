@@ -11,10 +11,15 @@ const connect = function() {
     console.log('Server says', data);
   })
   conn.on('connect', () => {
-   conn.write('Name: JAG!');
+   conn.write('Name: ABC');
+   conn.write('Move: up');
+   setInterval(() => {conn.write('Move: down')}, 200); 
+   setTimeout(() => {conn.write('Move: left');}, 400);
+   setTimeout(() => {conn.write('Move: right');}, 600);
  });
   return conn;
 };
 
 module.exports = connect;
+
 
