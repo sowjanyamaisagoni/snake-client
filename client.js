@@ -10,7 +10,11 @@ const connect = function() {
   conn.addListener('data', data => {
     console.log('Server says', data);
   })
+  conn.on('connect', () => {
+   conn.write('Name: JAG!');
+ });
   return conn;
 };
 
 module.exports = connect;
+
